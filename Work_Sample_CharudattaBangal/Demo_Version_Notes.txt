@@ -1,0 +1,21 @@
+
+## 🔒 Demo Version Notes
+
+This repository contains a **sanitized demonstration version** of an internal utility developed during my professional experience.
+
+The original project involved **secure API integrations and data exchange mechanisms** with confidential endpoints.  
+Due to company data protection policies, the **actual API keys, endpoint URLs, database schemas, and business data** cannot be shared publicly.
+
+**However, this demo version includes:**
+- The **complete business logic** and application flow (`Searchdocuments.aspx.cs`, `ResponsePage.aspx.cs`)
+- All **structural layers** (`App_Code`, `Helpers`, `Models`, `UI`, and `BusinessLogic`)
+- **Representative placeholder code** for API requests and data handling (non-confidential)
+- **Screenshots** of the working interface for reference
+
+**Not included / redacted:**
+- Proprietary API endpoints and authentication logic  
+- Encrypted connection strings and data access credentials  
+- Any company-specific domain logic or naming conventions  
+
+Other than the above, **this demo accurately represents the architecture, structure, and functionality** of the original project I worked on.
+
