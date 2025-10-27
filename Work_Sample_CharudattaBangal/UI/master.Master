@@ -1,0 +1,263 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="omnisearch.master" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <%-- Created By Hamza --%>
+    <title>Portal</title>
+    <%--<meta charset="UTF-8">--%>
+    <%--    <meta name="viewport" content="width=device-width, initial-scale=1">--%>
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="Content/LDes/images/icons/Birla.ico" />
+    <!--===============================================================================================-->
+    <link href="Content/LDes/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" aria-dropeffect="popup" />
+    <!--===============================================================================================-->
+    <link href="Content/LDes/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="Content/LDes/vendor/animate/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="Content/LDes/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="Content/LDes/vendor/animsition/css/animsition.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="Content/LDes/vendor/select2/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="Content/LDes/vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="Content/LDes/css/util.css" rel="stylesheet" />
+    <link href="Content/LDes/css/main.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+
+    <link href="Content/StyleMenu.css" rel="stylesheet" />
+    <script type="text/javascript" src="../Script/popupDiv.js"></script>
+    <link href="css/StylePopup.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <%-- Created By Hamza --%>
+    <asp:ContentPlaceHolder ID="PageHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () { $("input").attr("autocomplete", "off"); });
+
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+    </script>
+
+
+
+
+    <style type="text/css">
+        #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+        #header-con {
+            width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            border-bottom: 5px solid #888888;
+        }
+
+        .Company-logo {
+            width: 100%;
+            margin: 0 auto;
+            padding: 2px 0px;
+            float: left;
+            margin-top: 13px;
+        }
+
+        .logo {
+            width: 100%;
+            height: 160px;
+        }
+    </style>
+      <%--  CHANGED BY SHAMAL--%>
+    <style type="text/css">
+        /*div.hideSkiplink {
+            background-color: #3a4f63;
+            width: 100%;
+        }
+
+        #mnuMenuList ul li ul {
+            display: none;
+        }*/
+
+        #mnuMenuList ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            /*border: 2px solid #a1a1a1;*/
+            padding: 2px 10px;
+           
+            /*border-radius: 25px;*/
+            /*-moz-border-radius: 35px;*/ 
+        }
+        /*.roundcorner {
+            border: 2px solid #a1a1a1;
+            padding: 5px 50px;
+            background: #dddddd;
+            width: 150px;
+            border-radius: 25px;
+            -moz-border-radius: 35px;
+        }*/
+
+        
+    
+        #mnuMenuList a.popout
+        {
+            content:none;
+            background-image :none !important;
+          
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+         <header>
+            <nav  style="background-color: #cc2321;">
+
+        <div class="limiter">
+        <%--<div id="header-con">--%>
+            <div class="Company-logo">
+                 <%--   <div class="row">
+                        <div class="col-sm-4">
+                            <h2 class="healthhead">&nbsp&nbsp HEALTH INSURANCE
+                        <br />
+                                <span class="heathspan">
+                                    <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Aditya Birla Health Insurance Co. Limited
+                                </span>
+                            </h2>
+                        </div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-1">
+                            <br />
+                            <img src="images/Birla_Logo.jpg" alt="Aditya Birla Health" class="des" />
+                        </div>
+                        <div class="col-sm-3">
+                            <h2 class="adtbir">ADITYA BIRLA</h2>
+                            <h1 class="adtcap">CAPITAL</h1>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8"></div>
+                        <div class="col-sm-4">
+                            <span class="span1">PROTECTING</span>
+                            <span class="span2">INVESTING</span>
+                            <span class="span2">FINANCING</span>
+                            <span class="span2">ADVISING</span>
+                        </div>
+                    </div>--%>
+                    <img src="Images/Birla_Head.png" alt="Aditya Birla Health" id="empclientheader"  runat="server"  style="width:100%; height:117px" />
+                    
+                </div>
+            </div>
+       <%-- </divempclientheader
+
+      <%--  CHANGED BY SHAMAL--%>
+          
+        
+         <br />
+        <br />
+<asp:ContentPlaceHolder ID="PageBodyControls" runat="server">
+                     
+                    </asp:ContentPlaceHolder>
+                </nav>
+             </header>
+    </form>
+
+
+    <!--===============================================================================================-->
+    <script src="Content/LDes/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="Content/LDes/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="Content/LDes/vendor/bootstrap/js/popper.js"></script>
+    <script src="Content/LDes/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="Content/LDes/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="Content/LDes/vendor/daterangepicker/moment.min.js"></script>
+    <script src="Content/LDes/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="Content/LDes/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="Content/LDes/js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+    
+    
+    
+              <script>
+            $(document).ready(function () {
+                $('#datePicker')
+                    .datepicker({
+                        format: 'mm/dd/yyyy'
+                    })
+                    .on('changeDate', function (e) {
+                        // Revalidate the date field
+                        $('#eventForm').formValidation('revalidateField', 'date');
+                    });
+
+               
+            });
+</script>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+</script>
+    
+     <script type="text/javascript">
+         $(document).ready(function () {
+             // add code here
+             var value = $("mnuMenuList:selected").val();
+             console.log("Menu Item"+value);
+         });
+    </script> 
+</body>
+</html>
